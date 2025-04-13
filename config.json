@@ -6,7 +6,7 @@
       "settings": {
         "clients": [
           {
-            "id": "REPLACE-WITH-UUID",
+            "id": "3e9e3a28-3a7b-4e50-931d-fc2f72c41a69",
             "level": 0,
             "email": "user@vless.com"
           }

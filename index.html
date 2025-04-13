@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Проверка ключа</title>
+</head>
+<body>
+  <h1>Проверка ключа</h1>
+  <input type="text" id="keyInput" placeholder="Введите ключ" />
+  <button onclick="checkKey()">Проверить</button>
+  <p id="result"></p>
+
+  <script>
+    async function checkKey() {
+      const key = document.getElementById("keyInput").value;
+      const res = await fetch("https://YOUR-BACKEND-URL.onrender.com/verify-key", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ key })
+      });
+
+      const data = await res.json();
+      document.getElementById("result").innerText = data.valid
+        ? "✅ Ключ верный!"
+        : "❌ Неверный ключ!";
+    }
+  </script>
+</body>
+</html>

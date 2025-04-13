@@ -23,6 +23,10 @@ def login():
     
     return render_template('login.html')  # Путь к шаблону логина в корне проекта
 
+@app.route('/register')
+def register():
+    return render_template('register.html')  # не забудь создать шаблон register.html
+
 # Страница после успешного логина
 @app.route('/dashboard')
 def dashboard():

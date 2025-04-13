@@ -8,7 +8,6 @@ const validKeys = [];
 
 app.use(express.json());
 
-// Главная страница (HTML + CSS + JS)
 app.get('/', (req, res) => {
   res.send(`
     <!DOCTYPE html>
@@ -102,7 +101,6 @@ app.get('/', (req, res) => {
   `);
 });
 
-// Генерация ключа
 app.post('/generate-key', (req, res) => {
   const rawKey = uuidv4();
   const hash = crypto.createHash('sha256').update(rawKey).digest('hex');
@@ -110,7 +108,6 @@ app.post('/generate-key', (req, res) => {
   res.json({ key: hash });
 });
 
-// Проверка ключа
 app.post('/verify-key', (req, res) => {
   const { key } = req.body;
   if (!key) {

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Логин</title>
+</head>
+<body>
+    <h2>Логин</h2>
+    <form method="POST">
+        <label for="username">Логин:</label>
+        <input type="text" id="username" name="username" required>
+        <br><br>
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        <button type="submit">Войти</button>
+    </form>
+    <br>
+    <a href="{{ url_for('register') }}">Нет аккаунта? Зарегистрируйтесь здесь.</a>
+</body>
+</html>
